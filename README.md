@@ -12,7 +12,7 @@ You can also set an offset to the files, so their name can start in a specific n
 ### createTSC.exe
 Creates a TSC script ready to just be pasted into your game for your video to play!
 Allows configuration for 3 supported framerates (10,12,15) and as well several options to configure and allow almost full control of the generation of the script
-### PrepareFiles.exe
+### prepareFiles.exe
 Messed up one of the steps and want to rename your files again?, This tool will help you to rename all again so you can change your mind if you need a specific ID free!
 
 ## Building
