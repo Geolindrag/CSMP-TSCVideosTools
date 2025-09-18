@@ -1,0 +1,84 @@
+		TroubleShooting
+
+"My video is desynced"
+
+The game needs to run stable at 60FPS in order to run the video and audio propperly
+As any slowdown will slow the video playback, but not the audio,
+One trick to reduce the load is to reduce the resolution of your images to the half
+Other is reduced totally the resolution of Cave story, As due to my technicall limitations on my side
+i was only able to load a video stable in the lowest resolution of cavestory
+You might also want to check yout GPU options (if possible) to limit them to 60FPS
+
+"My images aren't being loaded by any of the programs"
+
+Be sure that you arent running them as admin, Or that the folder is not Write protected
+It is worth checking if you accidentally didn't rename the folder as well, in that case
+its name is : dropImagesHere
+
+"That didn't work!"
+
+The images must be explicetly .png files, and these should have the .png extension,
+as if these are missing the extension for some reason, but are valid .pngs, Wont get loaded
+due to the method used to detect them
+
+"CaveEditor is not opening/Taking too long to open the map scripts"
+
+Naturally after torturing the game engine like we did, Map scripts can take a while
+to load in Csve editor, just be patient
+
+"My video output is scrambled!"
+
+Make sure your files are sorted from A->Z
+If your files are already scrambled, then sorry, The only thing you can do is delete them
+and re-export them from the start
+
+"My game is crashing upon loading the map"
+
+You surpassed the 64KB limit of the Map.tsc+head.tsc
+You can check your map size by going to /<yourmod>/stages/MapName.tsc
+The Head.tsc is on the mod root folder
+
+"My game is crashing upon starting"
+
+Probably something really bad messed up
+Check that you didn't add any weird values on CaveEditor
+
+"My game is not crashing, But not loading the images"
+
+Make sure the casing of the folder names is correct
+
+
+
+		FAQ (that no one asked, but probably someone will ask)
+
+Q : Higher framerate?
+A: I don't think is possible, I've tried to implement it, but at some point seems that the game can't load the images fast enough
+maybe this is a performance issue on the almight powerful intelHD Graphics tha t i have, but since i don't
+have any other PC/GPU to test it on, i can't develop it on my part
+
+Q:Custom Framerate?
+A:Due to the mentioned before question, Frametimes are hard to get so the ones i added are hardcoded
+and despite i adding support for 3 Framerates, None of them are perfect
+I nfact if you use a long video, Past the 3Mins mark you can notice delay on either the audio/Video
+So yea, Adding custom framerate is something that exceeds my abilities
+
+Q:I don't want to install the video editor for framedumping
+A: Again, Sorry, thats a skill issue of my part, Since i can barely be called a programmer lol
+I would like to some point convert the videos to PNGs without external programs, but again, Skill issues on my part
+And i wanted to get this out, so maybe in a far future this will get added
+
+Q:Linux?
+A:Since CSMP is windows only (Unless you use Wine/Proton) i really didn't want to suffer and go
+to the Linux programming hell, and while it should be easy to just port the windows instructions 
+(mostly the I/O related one i would guess) i lack time to do it as right now, or test it, as soon my free time will be non-existant
+
+Q:Compatibility with other CaveStory mods?
+A:Im not really into Cave story modding ,I have only worked with CSMP to do stupid/joke mods, and thats all
+so i really lack knowledge to answer if it would be compatible with other mods
+
+Q:Hey something broke and the answer isn't here
+A:Feel free to ask me either on discord (geolindrag) or github directly (https://github.com/Geolindrag/) i usually respond when i have the time, 
+So the max time you may have to wait is 16Hrs~
+
+Written with ♥ (and pain) by Geolindrag
+SRC : https://github.com/Geolindrag/CSMP-TSCVideosTools

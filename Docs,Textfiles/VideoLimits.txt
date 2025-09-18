@@ -1,0 +1,50 @@
+Default Head.tsc 2.03KB
+The size limit is 64KB for the sum of the Map script+Head.tsc
+Any higher size will crash the game
+
+VIDEO TYPES
+
+Reduced size videos
+You can store up to 10,000 frames (0000-9999) on the mod root folder
+And while that makes the mod folder look ugly,
+these use a shorter instruction , and thus, allow you
+to play larger videos/save space for map scripting
+
+3932 frames = 61.4 KB Hard limit (Leaves 0.5KB for scripting)
+3500 frames =  SafeLimit (leaves 7KB~ for scripting)
+64Frames = 1KB~
+
+FPS	SafeDuration	Hard Limit (No map scripting)
+5FPS	11:40		13:06 //Unimplemented
+10FPS	5:50		6:33
+12FPS	4:51		3:27
+15FPS	3:53		4:22
+
+Normal videos
+These are saved on /yourmod/images/XXXX/ (XXXX being a number)
+these ones use an instruction that uses 1.5 the size of the reduced one
+thus, limiting the playback time to 75%~
+you can save as many of these as you want
+(Technically up to 100Million frames, or if a mod size limit exists
+but you arent't that crazy right?		right....? )
+
+2928 frames = 61.4 KB Hard limit (Leaves 0.5KB for scripting)
+2600 frames =  SafeLimit (leaves 7KB~ for scripting)
+48 Frames = 1KB~
+
+FPS	SafeDuration	Hard Limit (No map scripting)
+5FPS	8:40		9:44//Unimplemented
+10FPS	4:20		4:52
+12FPS	3:36		4:04
+15FPS	2:53		3:15
+
+Export resolutions (gets auto streched to fit window)
+Ratio	FullRes	HalfRes
+1:1	240x240	120x120
+4:3 	320x240	160x120
+16:9 	426x240	214x120
+You can go lower on resolution, but at that point looks really bad
+You can't go higher on resolution
+
+Written with ♥ by Geolindrag
+SRC : https://github.com/Geolindrag/CSMP-TSCVideosTools

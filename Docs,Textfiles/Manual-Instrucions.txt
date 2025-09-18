@@ -1,0 +1,231 @@
+
+		A- Programs required
+
+You are going to need the following stuff in order to get it working
+
+1 - A way to dump all frames of a video into PNG files
+	1.1- My choice : https://www.shotcut.org/
+
+2 -A game editor for your game
+	2.1 - For CSMP, install Cave Editor: https://cavestorymultiplayer.com/modding/
+	2.2 - For any other cave story mod/Game, check the one that is compatible https://www.cavestory.org/download/editors.php
+	Do note that if you want to use it for any other than CSMP, check that it has support for the <IMG tag	
+
+3-An audio converter that supports Ogg Vorbis
+	3.1- The mentioned before Video dumper works as well (https://www.shotcut.org/)
+	3.2- Else, you can probably find webpages that do this
+
+4-The tools provided by me (or maybe in the future someone makes ones that are better :>  )
+	4.1 Developed by me : https://github.com/Geolindrag/CSMP-TSCVideosTools
+	
+		B - Quick guide
+
+1- Dump your video into PNGs and place them on the "dropImagesFolder" and get your audio track converted into .ogg vorvis
+2-Run the "renameToDoukutsu.exe"
+3-Run the "createTSC.exe" and paste it's output somewhere safe
+4-Paste your images into your mod root folder and your audio tracks into /<yourmod>/music/
+5-Open cave editor, and load the TSC script into a map
+
+		C- Full Instructions (Assuming you are using my choice for frame dumping and CSMP Cave editor)
+
+	STEP 1- CONVERTING YOUR VIDEO 
+1.1- First you will need to dump your video file into PNG files
+Open ShotCut, and create a new project,Be sure that the project name starts with a letter, or will
+cause issues later, you can leave everything else at default
+
+1.2- At the bottom of the screen, is the timeline, Drag your video from your storage into there, it will create
+automatically a video layer, afterwards, just make sure it is dragged up to the time 00:00:00
+
+1.3- Save so it doesn't screams at us later
+
+1.4- After wards, at the top of the screen on the toolbar, click on export 
+(If the button is not there,go to View>Export That should make appear a tab either on the left or right panels)
+
+1.5- On the export presets, Scroll down at the bottom, Under the "Stills" category, select the "PNG" preset
+
+1.6- On the right side, Click the button "Advanced"
+
+1.7-Under the Video settings,Set the resolution to any of the following values from the next table ,as well set the aspect ratio according to your video
+
+Export resolutions (gets auto streched to fit window)
+Ratio	FullRes	HalfRes
+1:1	240x240	120x120
+4:3 	320x240	160x120
+16:9 	426x240	214x120
+You can go lower on resolution, but at that point looks really bad
+You can't go higher on resolution tho
+
+1.8- Under the framerate option,Write the desired framerate of the compatible ones
+CURRENTLY COMPATIBLE WITH 10,12 and 15
+Make sure the number is an integer or else could cause desync (IE, Correct = 10.000000 / Incorrect = 10.000090)
+
+About limitations, Your video files can only have a certain duration depending on which framerate you want
+Reffer to the following table  for the max durations 
+(you can read more about it and access this table easily on the VideoLimits.txt)
+
+Reduced size videos (You will be using this one if you dont plan on adding an excessive amount of videos)
+(Also, If you are not familiar with CaveStory Modding, You will want to not exceed the Safe duration or get 10~30 seconds close to it)
+FPS	SafeDuration	Hard Limit (No map scripting)
+10FPS	5:50		6:33
+12FPS	4:51		3:27
+15FPS	3:53		4:22
+
+Normal Size videos (The ones that go under /<yourmod>/Image/XXXX/)(Usually you won't use these)
+
+FPS	SafeDuration	Hard Limit (No map scripting)
+10FPS	4:20		4:52
+12FPS	3:36		4:04
+15FPS	2:53		3:15
+
+1.9-Click on export file, And then select a folder to where the PNG files will be dumped
+
+1.10- While this finishes, On the export tabs now we need to get your audio track, Scroll at the top of the list of the presets
+and search for the audio tab, Here select the "Ogg Vorbis" Preset
+
+1.11 Under the Audio tab, be sure the sample rate is 48000 ,Afterwards, just export it as well
+
+Once finished, We can move to step 2
+
+	STEP 2-PROCESSING THE FILES FOR CAVE STORY
+2.1 Unzip all the goodies of the "VideoToDoukutsu.zip" file into somewhere
+You should see the following:
+	|_VideoToDoukutsu
+  	  |-createTSC.exe
+	  |-PrepareFiles.exe
+	  |-renameToDoukutsu.exe
+	  |-FAQ and Troubleshooting.txt
+	  |-Manual-Instrucions.txt
+	  |-VideoLimits.txt
+	  |_dropImagesHere 
+	    |-<Empty>
+	
+
+2.2- First, Drop all the dumped PNG files under the "dropImagesHere" folder
+2.2.1- If you used a other program that shotcut,your dumped PNG files names start with any character that is not a letter,or you want to re-process them
+Run first "PrepareFiles.exe"
+
+2.3- Once that is done, Run the renameToDoukutsu.exe and follow the instrucions in there
+
+2-4-Afterwards, move your frames to somewhere else in case you later want to re-format them
+
+2-5- Run the createTSC.exe and follow the instructions in there,paste its output on a textfile so we later will use it
+
+Your files are ready to be imported into cave story! ,so now we need to :
+
+	STEP 3 - INSERT YOUR VIDEO(s) INTO CAVESTORY
+This step is a bit harder if you are unfamilliar with basic CaveStory modding so take your time and read carefully
+
+3.1 BACKUP YOUR CAVESTORY FILES/INSTALLATION IN CASE SOMETHING MESSES UP
+3.1.2 In case you don't have a mod to insert your video files, Follow the next 2 instructions:
+	3.1.3 Copy your "data" folder in that same directory it is located
+	3.1.4 Rename it into something with only lowercase letters, and no spaces (for example: "badapplestory")
+
+3.2 Paste all your images into the root of your mod folder 
+(Advanced users can use /<yourmod>/Image/XXXX/ tho is NOT RECOMENDED as it will limit your videos to 75%~ duration)
+
+3.3 Paste your .ogg files into the music folder
+
+3.4Afterwards,  we will open your preffered game editor (CaveEditor 2 if you are using CSMP)
+
+3.5 Select File>Load, and go to your mod folder, and select the mod.pxmod file
+
+3.6 You will see a lot of stuff pop in, Under the "Music" section, Click on "Add Music" and point to the .ogg files you pasted in the music folder
+If you followed steps 3.1.2 to 3.1.4 
+	3.6.1 At the Right side of the screen, click on the "Mod Settings" button
+	3.6.2 and In there,Change the mod title (can be whathever you want) and click on OK
+
+Now comes the hardest part, Read carefully
+
+3.7 On the map list, Click on the map you want to add your video 
+	3.7.1 If you are unsure/Just want to mess around, Select either "[012] First Cave" or "[013] Start Point"
+	I will be using "[013]Start Point" for the examples
+
+3.8 The map editor window will show up, Now add the entity you want to make the video play and its #event
+	3.8.1 (Confused?, Follow the following steps:)
+	3.8.2 Right click on the spot where you want to place your "Music player" Be sure its on standable ground and select "Add entity"
+	3.8.3 At the top of the screen, There should be a section called "Entity-<NUMBER>" 
+	on there select the type to "20- Computer" or "37 - SignPost" (can be any other thing, but these aren't gonna murder you or break)
+	3.8.4 Click on the button "Flag Details" and on the menu, Check "0x002000 - PC presses down to run script" and then Save
+	3.8.5 Under the "Event #" text field, Write its event number (Recommended : 2101)
+
+3.9 At the top of the screen, Go to Map>Edit Script
+
+3.10 Create your event, and in the first command write a  <CMU to play the audio track and paste your TSC Script we got from the createTSC.exe program before 
+It is recommended that you start with a <PRI Tag before you start playing your video 
+	3.10.1 (Confused?, Follow the following steps)
+	3.10.2 On the Script editor we just opened, At the end of the file, Insert a new line, and write (or paste) the following:
+#2101
+<PRI<CMU0045
+"Replace me"
+<RMU<END
+	3.10.3 The <CMU0045 Tag changes the music, You can change the number in there to change the music (Dont delete the zero's)
+	3.10.4 Copy the text we got from the createTSC.exe file, And paste it over the "Replace me" text 
+	(Be sure this one is not present after pasting the text)
+
+3.11 Save your script, And close the script window,On the map editor window, As well go to Map>Save and close it
+
+3.12 On the Main CaveEditor window, Again, Save (File>Save)
+
+3.13 Now you can test it
+	 3.13aYou can do a "Playtest" by opening again the map you placed the video in
+	(might take a while to load depending of your video duration)
+	and afterwards right click on the space you want to spawn, and select "Open game here"
+	3.13b Or also you can now right away open Doukutsu.exe (Aka cave story), and click on the "m" at the top left of the screen
+	afterwards, select your mod, and create a new game
+
+3.14 To play the video Interact with the object you created (If you were following the examples, this should be a sign on the starting area)
+
+And finally we are done! Enjoy the spectacle!
+
+
+		E-EXTRAS 
+
+
+	E1 MULTIPLE VIDEOS
+E1.1- Follow all steps normally untill 2.3
+
+E1.2- On there first process your first video as normal, and follow up to step 2.5
+
+E1.3-Now once you finished step 2.5 ,repeat all steps from 1 to 2.2 for your second video
+
+E1.4-Now, when  you run ToDoukutsu.exe, on the number it ask you to input, Write the number of the last frame of your first video, and add 1
+so if the last frame of the first video is 1097, write 1098
+
+E1.5-Follow the steps 2.4 normally
+
+E1.6-During step 2.5, When the program asks you the first frame, Write the number we used before (In the example, 1098)
+and on the last number, just  follow it normally, and search for the number of the last frame of your video
+This will return you a TSC script that will play this second video 
+
+E1.7- You can continue up until 3.6 , just be sure to add the files of your second video as well 
+(If you done it right,It shouldn't ask you for overwriting files)
+
+E1.8- on step 3.7 account the following
+If you are adding multiple videos on a single map, be sure the size of the map.tsc + head.tsc is NOT higher than 64KB
+You can keep adding as many videos as you want as long that an individual map.tsc+head.tsc size is lower than 64KB
+Or untill you run out of frames (Which is 0000-9999) in that case, you need to use :
+	
+		E2 NORMAL SIZED VIDEOS
+If you read the whole thing, you are probably tired of me telling you that these have reduced duration
+So lets move on 
+
+E2.1 Follow steps normally until 2.4
+
+E2.2 On 2.5, when running the createTSC.exe, Answer normaly until the question "Do you want to create a non-reduced video?"
+On there, select 1 (Yes)
+
+E2.3 Write the name of the folder where the images will go into (as a note again, Don't write the extra zero's)
+
+E2.4 Once you get your command, now continue normally until 3.1
+
+E2.5 on 3.2 ; All videos generated with this method, must go into /<yourmod>/Image/XXXX/
+(Be careful with the casing of the folder, The "I" is Upper case )
+Now in this case, you will need to add the extra zero's so is always a 4 digit number, so if you used folder 3, The folder should be named 0003
+the audio files are unaffected
+
+E2.6 The rest is as usual
+
+
+
+Written with ♥ by Geolindrag
+SRC : https://github.com/Geolindrag/CSMP-TSCVideosTools
